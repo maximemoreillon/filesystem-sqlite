@@ -37,9 +37,7 @@ const App: Component = () => {
       create: true,
     })
     const file = await fileHandle.getFile()
-    // TODO: create DB if not exists
     const arrayBuffer = await file.arrayBuffer()
-    // sql.js expects a Uint8Array
     const dbAsUint8Array = new Uint8Array(arrayBuffer)
     db = new SQL.Database(dbAsUint8Array)
 
